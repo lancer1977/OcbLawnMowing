@@ -103,9 +103,9 @@
 		<SoundDataNode name="lawnmower_plant">
 			<AudioSource name="@:Sounds/Prefabs/AudioSource_Vehicle.prefab"/>
 			<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
-			<AudioClip ClipName="Sounds/DestroyBlock/plantdestroy1"/>
-			<AudioClip ClipName="Sounds/DestroyBlock/plantdestroy2"/>
-			<AudioClip ClipName="Sounds/DestroyBlock/plantdestroy3"/>
+			<AudioClip ClipName="@:Sounds/DestroyBlock/plantdestroy1.wav"/>
+			<AudioClip ClipName="@:Sounds/DestroyBlock/plantdestroy2.wav"/>
+			<AudioClip ClipName="@:Sounds/DestroyBlock/plantdestroy3.wav"/>
 			<!-- <AudioClip ClipName="#@modfolder:Resources/LawnMowers.unity3d?lawn-tractor-grass"/> -->
 			<LowestPitch name="0.9"/>
 			<HighestPitch name="1.0"/>
