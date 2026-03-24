@@ -211,3 +211,8 @@ Only clone or download the repo if you know what you do!
 [2]: https://github.com/OCB7D2D/OcbLawnMowing/actions/workflows/ci.yml
 [3]: https://github.com/OCB7D2D/OcbLawnMowing/actions/workflows/ci.yml/badge.svg
 [4]: https://www.nexusmods.com/7daystodie/mods/3312
+
+## 📖 Documentation
+Detailed documentation can be found in the following sections:
+- [Feature Index](./docs/features/README.md)
+- [Core Capabilities](./docs/features/core-capabilities.md)
