@@ -183,24 +183,24 @@ public class OcbLawnMowing : IModApi
     }
 
     [HarmonyPatch(typeof(Audio.Manager), "Play")]
-    [HarmonyPatch(new System.Type[] { typeof(Vector3),
-        typeof(string), typeof(int) })]
+    [HarmonyPatch(new System.Type[] { typeof(Entity),
+        typeof(string), typeof(float), typeof(bool) })]
     public class AudioManagerPlayPatch
     {
-        private static void Prefix(string soundGroupName, int entityId, ref bool __state)
+        private static void Prefix(Entity _entity, string soundGroupName, float volumeScale, bool wantHandle, ref bool __state)
         {
-            if (entityId >= 0 && soundGroupName == "lawnmower_plant")
+            if (_entity.entityId >= 0 && soundGroupName == "lawnmower_plant")
             {
-                var entity = GameManager.Instance.World.GetEntity(entityId);
+                var entity = GameManager.Instance.World.GetEntity(_entity.entityId);
                 if (entity is EntityAlive alive) __state = alive.Crouching;
                 ((EntityAlive)entity).Crouching = true;
             }
         }
-        private static void Postfix(string soundGroupName, int entityId, bool __state)
+        private static void Postfix(Entity _entity, string soundGroupName, float volumeScale, bool wantHandle, bool __state)
         {
-            if (entityId >= 0 && soundGroupName == "lawnmower_plant")
+            if (_entity.entityId >= 0 && soundGroupName == "lawnmower_plant")
             {
-                var entity = GameManager.Instance.World.GetEntity(entityId);
+                var entity = GameManager.Instance.World.GetEntity(_entity.entityId);
                 if (entity is EntityAlive alive) alive.Crouching = __state;
             }
         }
