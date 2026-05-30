@@ -40,6 +40,12 @@
 - [ ] Add dependency governance and versioning policy for external runtime packages.
 - [ ] Add an operations-focused runbook with rollback and recovery steps.
 
+## Active modernization track
+- [ ] Execute the V2.3 modernization plan in `docs/roadmaps/v2.3-modernization.md`.
+- [ ] Provide a latest 7D2D `7DaysToDie_Data/Managed` path and a .NET Framework 4.8-capable build surface.
+- [ ] Compile against latest game DLLs before changing runtime logic.
+- [ ] Validate XML patch targets against latest V2.3 game configs.
+
 ## Next steps checklist
 - [ ] Create at least one integration test or harness for critical gameplay hooks.
 - [ ] Tie `docs` roadmap updates to at least one release candidate.
