@@ -14,6 +14,15 @@ Special Thanks to all the people that made this mod possible!
 
 [![GitHub CI Compile Status][3]][2]
 
+## Tags
+
+- ocb-lawn-mowing
+- docs
+- testing
+- lawn
+- mowing
+- ui
+
 ## Lawn Tractor
 
 The required parts for the placeable vehicle are unlocked at Vehicle Crafting
