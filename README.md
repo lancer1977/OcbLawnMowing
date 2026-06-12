@@ -23,6 +23,12 @@ Special Thanks to all the people that made this mod possible!
 - mowing
 - ui
 
+## Documentation
+
+- [Docs README](./docs/README.md)
+- [Feature Index](./docs/features/README.md)
+- [Roadmap Index](./docs/roadmaps/README.md)
+
 ## Lawn Tractor
 
 The required parts for the placeable vehicle are unlocked at Vehicle Crafting
