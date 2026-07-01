@@ -1,13 +1,6 @@
-# OcbLawnMowing Roadmaps
+# OcbLawnMowing: OcbLawnMowing Roadmaps
 
-Canonical roadmap entrypoint for OcbLawnMowing.
+This local planning file has been migrated. GitHub Issues are the canonical tracker.
 
-## Current Roadmap
-
-- [Portfolio Roadmap](./portfolio-roadmap.md)
-- [V2.3 Modernization](./v2.3-modernization.md)
-
-## Notes
-
-- Keep active roadmap language focused on the current mod boundary.
-- Prefer concrete delivery slices over broad future-state claims.
+Canonical GitHub issue: https://github.com/lancer1977/dev-forge/issues/598
+Original source kind: roadmap
