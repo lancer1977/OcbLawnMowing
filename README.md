@@ -243,3 +243,23 @@ Only clone or download the repo if you know what you do!
 Detailed documentation can be found in the following sections:
 - [Feature Index](./docs/features/README.md)
 - [Core Capabilities](./docs/features/core-capabilities.md)
+
+## Repository Shape
+
+- `README.md` - repository entry point.
+- `repo-state.md` - compact current-state mirror.
+- `docs/index.md` - stable documentation index.
+- `docs/validation.md` - validation notes.
+- `scripts/validate.sh` - repo-native project validation.
+- `repo-state.md` - tracked state snapshot used by the steward loop.
+
+## Validation
+
+```bash
+bash scripts/validate.sh
+```
+
+## Documentation
+
+- [Repo State](repo-state.md)
+- [Validation](docs/validation.md)
