@@ -1,0 +1,13 @@
+schema: 1
+project:
+  name: OcbLawnMowing
+  kind: game-mod
+  owner: OCB7D2D
+validation:
+  validate: bash scripts/validate.sh
+tracking:
+  primary: repo-state
+  repo-state: repo-state.md
+docs:
+  index: docs/index.md
+  validation: docs/validation.md
