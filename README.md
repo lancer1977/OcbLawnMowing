@@ -1,4 +1,4 @@
-# Lawn Mowing Mod - 7 Days to Die (V1.0 exp) Addon
+# Lawn Mowing Mod - 7 Days to Die (V2.1) Addon
 
 What started as a small Proof of concept has grown into a feature rich
 Mod, that should satisfy a few of your farming sim desires. I've added
@@ -13,6 +13,21 @@ There might be more in the distant future, like a manual lawn mower.
 Special Thanks to all the people that made this mod possible!
 
 [![GitHub CI Compile Status][3]][2]
+
+## Tags
+
+- ocb-lawn-mowing
+- docs
+- testing
+- lawn
+- mowing
+- ui
+
+## Documentation
+
+- [Docs README](./docs/README.md)
+- [Feature Index](./docs/features/README.md)
+- [Roadmap Index](./docs/roadmaps/README.md)
 
 ## Lawn Tractor
 
@@ -132,6 +147,18 @@ Only clone or download the repo if you know what you do!
 
 ## Changelog
 
+### Version 2.5.0
+
+- Update for 7D2D V2.1 stable
+
+### Version 2.4.1
+
+- Fix sounds not playing
+
+### Version 2.4.0
+
+- Update for 7D2D V2.0 stable
+
 ### Version 2.3.2
 
 - Add null pointer check for materials
@@ -216,3 +243,23 @@ Only clone or download the repo if you know what you do!
 Detailed documentation can be found in the following sections:
 - [Feature Index](./docs/features/README.md)
 - [Core Capabilities](./docs/features/core-capabilities.md)
+
+## Repository Shape
+
+- `README.md` - repository entry point.
+- `repo-state.md` - compact current-state mirror.
+- `docs/index.md` - stable documentation index.
+- `docs/validation.md` - validation notes.
+- `scripts/validate.sh` - repo-native project validation.
+- `repo-state.md` - tracked state snapshot used by the steward loop.
+
+## Validation
+
+```bash
+bash scripts/validate.sh
+```
+
+## Documentation
+
+- [Repo State](repo-state.md)
+- [Validation](docs/validation.md)

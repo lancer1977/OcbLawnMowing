@@ -1,6 +1,6 @@
 @echo off
 
-SET NAME=OcbLawnTractor
+SET NAME=OcbLawnMowing
 
 if not exist build\ (
   mkdir build
@@ -28,13 +28,6 @@ xcopy Config build\%NAME%\Config\ /S
 xcopy Screens build\%NAME%\Screens\ /S
 xcopy Resources build\%NAME%\Resources\ /S
 xcopy UIAtlases build\%NAME%\UIAtlases\ /S
-
-REM xcopy BepInEx build\%NAME%\BepInEx\ /S
-REM xcopy patchers\*.dll build\%NAME%\patchers\
-REM xcopy 98-install-bepinex.sh build\%NAME%\
-REM xcopy 98-install-bepinex.bat build\%NAME%\
-REM xcopy 99-uninstall-bepinex.sh build\%NAME%\
-REM xcopy 99-uninstall-bepinex.bat build\%NAME%\
 
 cd build
 echo Packaging %NAME%-%VERSION%.zip
