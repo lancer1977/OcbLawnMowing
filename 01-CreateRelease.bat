@@ -1,6 +1,6 @@
 @echo off
 
-SET NAME=OcbLawnTractor
+SET NAME=OcbLawnMowing
 
 if not exist build\ (
   mkdir build
@@ -31,7 +31,7 @@ xcopy UIAtlases build\%NAME%\UIAtlases\ /S
 
 cd build
 echo Packaging %NAME%-%VERSION%.zip
-powershell Compress-Archive %NAME% %NAME%-%VERSION%-V2.0.zip -Force
+powershell Compress-Archive %NAME% %NAME%-%VERSION%.zip -Force
 cd ..
 
 SET RV=%ERRORLEVEL%

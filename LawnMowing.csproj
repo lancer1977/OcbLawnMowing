@@ -23,9 +23,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PostBuildEvent>
-      copy /Y /B "$(AssemblyName).dll" "..\..\..\$(AssemblyName).dll"
-    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,14 +31,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PostBuildEvent>
-      copy /Y /B "$(AssemblyName).dll" "..\..\..\$(AssemblyName).dll"
-    </PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>$(PATH_7D2D_MANAGED)\0Harmony.dll</HintPath>
+      <HintPath>$(NuGetPackageRoot)lib.harmony/2.4.2/lib/net48/0Harmony.dll</HintPath>
     </Reference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>$(PATH_7D2D_MANAGED)\Assembly-CSharp.dll</HintPath>
     </Reference>
@@ -75,6 +72,9 @@
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
       <HintPath>$(PATH_7D2D_MANAGED)\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>$(PATH_7D2D_MANAGED)\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
       <HintPath>$(PATH_7D2D_MANAGED)\UnityEngine.ParticleSystemModule.dll</HintPath>
@@ -138,5 +138,8 @@
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
+  <Target Name="CopyOutputToRepoRoot" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(MSBuildProjectDirectory)\$(AssemblyName).dll" />
+  </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
