@@ -127,13 +127,13 @@ public class VPMower : VehiclePart
 
         if (vehicle == null) return;
 
-        // Collect all materials (in a unique fashion)
-        Transform transform = vehicle.GetMeshTransform();
-        foreach (var renderer in transform?.GetComponentsInChildren<Renderer>(true))
-            if (!Materials.Contains(renderer.material)) Materials.Add(renderer.material);
+        RefreshMaterials();
         // Reset brake lights on initialization
         foreach (var material in Materials)
+        {
+            if (material == null) continue;
             material.SetVector("_BrakeColor", Color.black);
+        }
         // Collect `MowerHarvestTags` from all modifiers
         foreach (ItemValue mod in modifications)
         {
@@ -327,10 +327,7 @@ public class VPMower : VehiclePart
     {
         if (vehicle == null) return;
         if (IsBroken()) state = false;
-        Transform transform = vehicle.GetMeshTransform();
-        if (transform == null) return; // Play safe in case of bad data
-        foreach (var renderer in transform?.GetComponentsInChildren<Renderer>(true))
-            if (!Materials.Contains(renderer.material)) Materials.Add(renderer.material);
+        RefreshMaterials();
         foreach (var material in Materials)
         {
             if (material == null) continue;
@@ -339,6 +336,23 @@ public class VPMower : VehiclePart
             else material.DisableKeyword("EMISSION_ON");
             var color = IsOn ? ColorMowerOn : Color.black;
             material.SetColor("_MowerOnColor", color);
+        }
+    }
+
+    // ####################################################################
+    // ####################################################################
+
+    private void RefreshMaterials()
+    {
+        if (vehicle == null) return;
+        Transform transform = vehicle.GetMeshTransform();
+        if (transform == null) return; // Play safe in case of bad data
+        foreach (var renderer in transform.GetComponentsInChildren<Renderer>(true))
+        {
+            if (renderer == null) continue;
+            Material material = renderer.material;
+            if (material != null && !Materials.Contains(material))
+                Materials.Add(material);
         }
     }
 
@@ -361,6 +375,7 @@ public class VPMower : VehiclePart
         // Update material if state changed
         if (HasBrakes != LastBrakes)
         {
+            RefreshMaterials();
             Color color = ColorBrakeLight * HasBrakes * 0.5f;
             foreach (var material in Materials)
             {
