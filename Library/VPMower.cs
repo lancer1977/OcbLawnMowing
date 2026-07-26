@@ -348,8 +348,12 @@ public class VPMower : VehiclePart
         Transform transform = vehicle.GetMeshTransform();
         if (transform == null) return; // Play safe in case of bad data
         foreach (var renderer in transform.GetComponentsInChildren<Renderer>(true))
-            if (renderer != null && renderer.material != null && !Materials.Contains(renderer.material))
-                Materials.Add(renderer.material);
+        {
+            if (renderer == null) continue;
+            Material material = renderer.material;
+            if (material != null && !Materials.Contains(material))
+                Materials.Add(material);
+        }
     }
 
     // ####################################################################

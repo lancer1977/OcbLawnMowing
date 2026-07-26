@@ -1,0 +1,20 @@
+name: material-cache-contract
+
+on:
+  pull_request:
+    paths:
+      - Library/VPMower.cs
+      - tests/test_material_cache_contract.py
+      - .github/workflows/material-cache-contract.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate material cache refresh contract
+        run: python3 -m unittest -v tests/test_material_cache_contract.py
